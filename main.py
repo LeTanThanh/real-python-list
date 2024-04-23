@@ -83,3 +83,11 @@ if __name__ == "__main__":
   print(fib_generator(10))
   print(list(fib_generator(10)))
   print([*fib_generator(10)])
+
+  # Building Lists With List Comprehensions
+
+  """
+  [expression(item) for item in iterable]
+  """
+
+  print([number ** 2 for number in range(1, 11)])
