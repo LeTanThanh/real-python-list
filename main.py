@@ -60,3 +60,26 @@ if __name__ == "__main__":
 
   empty = []
   print(empty)
+
+  # Using the list() Constructor
+
+  """
+  list([iterable])
+  """
+
+  print(list((0, 1, 2, 3, 4, 5, 6, 7, 8, 9)))
+  print(list({ "circle", "square", "triangle", "rectangle", "pentagon" }))
+  print(list({ "name": "John", "age": 30, "city": "New York" }.items()))
+  print(list("Pythonista"))
+  print(list())
+
+  def fib_generator(stop):
+    current_fib, next_fib = 0, 1
+    for _ in range(0, stop):
+      fib_number = current_fib
+      current_fib, next_fib = next_fib, current_fib + next_fib
+      yield fib_number
+
+  print(fib_generator(10))
+  print(list(fib_generator(10)))
+  print([*fib_generator(10)])
