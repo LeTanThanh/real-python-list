@@ -479,3 +479,17 @@ if __name__ == "__main__":
 
   fruits[len(fruits):] = ["orange", "mango", "banana"]
   print(fruits)
+
+  # Inserting an Item at a Given Position: .insert()
+
+  letters = ["A", "B", "F", "G"]
+  print(letters)
+
+  letters.insert(2, "C")
+  print(letters)
+
+  letters.insert(3, "D")
+  print(letters)
+
+  letters.insert(4, "E")
+  print(letters)
