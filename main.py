@@ -447,3 +447,21 @@ if __name__ == "__main__":
   print(numbers)
   numbers[2:6] = [3]
   print(numbers)
+
+  # Growing and Shrinking Lists Dynamically
+
+  # Appending a Single Item at Once: .append()
+
+  pets = ["cat", "dog"]
+  print(pets)
+
+  pets.append("parrot")
+  pets.append("gold fish")
+  pets.append("python")
+  print(pets)
+
+  pets[len(pets):] = ["hawk"]
+  print(pets)
+
+  pets.append(["hamster", "turtle"])
+  print(pets)
