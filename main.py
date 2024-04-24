@@ -317,3 +317,92 @@ if __name__ == "__main__":
   print(id(countries) == id(nations))       # False
   print(id(countries[0]) == id(nations[0])) # False
   print(id(countries[1]) == id(nations[1])) # True
+
+  # Deep Copies of a List
+
+  """
+  Sometimes you may need to build a complete copy of an existing list.
+  In other words, you want a copy that creates a new list object and also creates new copies of the contained elements.
+  In these situations, you'll have to construct what's you know as a deep copy.
+
+  When you create a deep copy of a list, Python construct a new list object and then inserts copies of the objects from the original list recursively.
+
+  To create a deep copy of an existing list, you can use the deepcopy() function from the copy module.
+  Here's an example of how this function works:
+  """
+
+  from copy import deepcopy
+
+  matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  matrix_copy = deepcopy(matrix)
+
+  print(matrix)
+  print(matrix_copy)
+  print(id(matrix) == id(matrix_copy))
+  print(id(matrix[0]) == id(matrix_copy[0]))
+  print(id(matrix[1]) == id(matrix_copy[1]))
+
+  """
+  In this example, you create a deep copy of your matrix list.
+  Note how both the lists and their sibling items have different identities.
+
+  Why would you need to create a deep copy of matrix, anyway?
+  For example, if you only create a shallow copy of matrix, then you can face some issues when trying to mutate the nested lists:
+  """
+
+  from copy import copy
+
+  matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  matrix_copy = copy(matrix)
+
+  print(matrix)
+  print(matrix_copy)
+
+  matrix[0][0] = 100
+  matrix[0][1] = 100
+  matrix[0][2] = 100
+
+  print(matrix)
+  print(matrix_copy)
+
+  """
+  In this example, you create a shallow copy of matrix.
+  If you change items in a nested list within matrix_copy, then those changes affect the original date in matrix.
+  The way to avoid this behavior is to use a deep copy:
+  """
+
+  from copy import deepcopy
+
+  matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  matrix_copy = deepcopy(matrix)
+
+  print(matrix)
+  print(matrix_copy)
+
+  matrix[0][0] = 100
+  matrix[0][1] = 100
+  matrix[0][2] = 100
+
+  print(matrix)
+  print(matrix_copy)
+
+  """
+  Now the changes in matrix_copy or any other deep copy don't affect the content of matrix, as you can see on the highlighted lines.
+
+  Finally, it's important to note that when you have a list containing immutable objects, such as numbers, strings, or tuples, the behavior of deepcopy() mimics what copy() does:
+  """
+
+  countries = ["United States", "Canada", "Poland", "Germany", "Austria"]
+  nations = deepcopy(countries)
+  print(countries)
+  print(nations)
+
+  print(id(countries) == id(nations))       # True
+  print(id(countries[0]) == id(nations[0])) # True
+  print(id(countries[1]) == id(nations[1])) # True
+
+  """
+  In this example, even though you use deepcopy(), the items in nations are aliases of the items in countries.
+  That behavior make sense because you can't change immutable obejcts in place.
+  Again, this behavior optimizes the memory consumption of your code when you're working with multiple copies of a list.
+  """
