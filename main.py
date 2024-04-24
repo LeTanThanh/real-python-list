@@ -221,3 +221,19 @@ if __name__ == "__main__":
   1. A shallow copy
   2. A deep copy
   """
+
+  # Aliases of a List
+
+  countries = ["United States", "Canada", "Poland", "Germany", "Austria"]
+  print(countries)
+
+  nations = countries
+  print(nations)
+
+  print(id(countries))
+  print(id(nations))
+  print(countries is nations)
+
+  countries[0] = "United States of America"
+  print(countries)
+  print(nations)
