@@ -237,3 +237,83 @@ if __name__ == "__main__":
   countries[0] = "United States of America"
   print(countries)
   print(nations)
+
+  # Shallow Copies of a List
+
+  """
+  A shallow copy of an existing list is a new list containing references to the objects stored in the original list.
+  In other words, when you create a shallow copy of a list, Python constructs a new list with a new identity.
+  Then, it inserts references to the objects to the objects in the original list into the new list.
+
+  There are at least three different ways to create a shallow copis of an existing list.
+  You can use:
+
+  1. The slicing operator, [:]
+  2. The .copy() method
+  3. The copy() function from the copy module
+
+
+  These three tools demonstrate equivalent behavior.
+  So, to kick things off, you'll start exploring the slicing operator:
+  """
+
+  countries = ["United States", "Canada", "Poland", "Germany", "Austria"]
+  print(countries)
+
+  nations = countries[:]
+  print(nations)
+  print(id(countries) == id(nations))       # False
+  print(id(countries[0]) == id(nations[0])) # True
+  print(id(countries[1]) == id(nations[1])) # True
+
+  countries[0] = "United States of America"
+  print(countries)
+  print(nations)
+  print(id(countries) == id(nations))       # False
+  print(id(countries[0]) == id(nations[0])) # False
+  print(id(countries[1]) == id(nations[1])) # True
+
+  """
+  On the first line of this piece of code, you update the item at index 0 in countries.
+  This change doesn't affect the item at index 0 in nations.
+  Now the first items in the list are completely different objects with their own identoties.
+  The rest of the items, however, continue to share the same identity.
+  So, they're the same object in each case.
+
+  Because making copies of a list is such a common operation, the list class hash a dedicated method for it.
+  The method is called .copy(), and it returns a shallow copy of the target list:
+  """
+
+  countries = ["United States", "Canada", "Poland", "Germany", "Austria"]
+  print(countries)
+
+  nations = countries.copy()
+  print(nations)
+  print(id(countries) == id(nations))       # False
+  print(id(countries[0]) == id(nations[0])) # True
+  print(id(countries[1]) == id(nations[1])) # True
+
+  countries[0] = "United States of America"
+  print(countries)
+  print(nations)
+  print(id(countries) == id(nations))       # False
+  print(id(countries[0]) == id(nations[0])) # False
+  print(id(countries[1]) == id(nations[1])) # True
+
+  from copy import copy
+
+  countries = ["United States", "Canada", "Poland", "Germany", "Austria"]
+  print(countries)
+
+  nations = copy(countries)
+  print(nations)
+  print(id(countries) == id(nations))       # False
+  print(id(countries[0]) == id(nations[0])) # True
+  print(id(countries[1]) == id(nations[1])) # True
+
+  countries[0] = "United States of America"
+  print(countries)
+  print(nations)
+  print(id(countries) == id(nations))       # False
+  print(id(countries[0]) == id(nations[0])) # False
+  print(id(countries[1]) == id(nations[1])) # True
