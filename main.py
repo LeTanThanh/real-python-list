@@ -141,3 +141,73 @@ if __name__ == "__main__":
   print(employees[3]["name"])
   print(employees[3]["age"])
   print(employees[3]["job"])
+
+  # Retrieving Multiple Items From a List: Slicing
+
+  """
+  list_object[start:stop:step]
+  """
+
+  letters = ["A", "a", "B", "b", "C", "c", "D", "d"]
+  print(letters)
+
+  upper_letters = letters[0::2]
+  print(upper_letters)
+
+  lower_letters = letters[1::2]
+  print(lower_letters)
+
+  digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  print(digits)
+
+  first_three = digits[:3]
+  print(first_three)
+
+  middle_four = digits[3:7]
+  print(middle_four)
+
+  last_three = digits[-3:]
+  print(last_three)
+
+  every_two = digits[::2]
+  print(every_two)
+
+  every_three = digits[::3]
+  print(every_three)
+
+  """
+  slice(start, stop, step)
+  """
+
+  letters = ["A", "a", "B", "b", "C", "c", "D", "d"]
+  print(letters)
+
+  slice_object = slice(0, None, 2)
+  print(slice_object)
+  print(type(slice_object))
+  upper_letters = letters[slice_object]
+  print(upper_letters)
+
+  slice_object = slice(1, None, 2)
+  print(slice_object)
+  print(type(slice_object))
+  lower_letters = letters[slice_object]
+  print(lower_letters)
+
+  """
+  Finally, it's important to note that out of range values for start and stop don't cause slicing expression to raise a TypeError.
+  In general, you'll observe the following behaviors:
+
+  - If start is before the beginning of the list, which can happen when you use negative indices, then Python will use 0 instead.
+  - If start is greater than stop, then slicing will return an empty list.
+  - If stop is beyond the length of the the list, then Python will use the length of the list instead.
+
+  Here are some examples that show these behaviors in action:
+  """
+
+  colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+  print(colors)
+  print(len(colors)) # 7
+  print(colors[-8:])
+  print(colors[8:])
+  print(colors[:8])
