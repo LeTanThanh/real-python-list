@@ -91,3 +91,53 @@ if __name__ == "__main__":
   """
 
   print([number ** 2 for number in range(1, 11)])
+
+  # Accessing Items in a List: Indexing
+
+  """
+  list_object[index]
+  """
+
+  languages = ["Python", "Java", "JavaScript", "C++", "Go", "Rust"]
+  print(languages)
+  print(languages[0])
+  print(languages[1])
+  print(languages[2])
+  print(languages[3])
+  print(languages[4])
+  print(languages[5])
+  print(len(languages)) # 6
+  # languages[6]
+  # IndexError
+
+  print(languages[-1])
+  print(languages[-2])
+  print(languages[-3])
+  print(languages[-4])
+  print(languages[-5])
+  print(languages[-6])
+  # languages[-7]
+  # IndexError
+
+  employees = [
+    ("John", 30, "Software Engineer"),
+    ("Alice", 25, "Web Developer"),
+    ("Bob", 45, "Data Analyst"),
+    ("Mark", 22, "Intern"),
+    ("Samantha", 36, "Project Manager")
+  ]
+  print(employees)
+  print(employees[1][0])
+  print(employees[1][1])
+  print(employees[1][2])
+
+  employees = [
+    { "name": "John", "age": 30, "job": "Software Engineer" },
+    { "name": "Alice", "age": 25, "job": "Web Developer" },
+    { "name": "Bob", "age": 45, "job": "Data Analyst" },
+    { "name": "Mark", "age": 22, "job": "Intern" },
+    { "name": "Samantha", "age": 36, "job": "Project Manager" }
+  ]
+  print(employees[3]["name"])
+  print(employees[3]["age"])
+  print(employees[3]["job"])
