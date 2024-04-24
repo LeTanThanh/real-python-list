@@ -493,3 +493,71 @@ if __name__ == "__main__":
 
   letters.insert(4, "E")
   print(letters)
+
+  # Deleting Items From a List
+
+  sample = [12, 11, 10, 42, 14, 12, 42]
+  print(sample)
+
+  sample.remove(42)
+  print(sample)
+
+  sample.remove(42)
+  print(sample)
+
+  # sample.remove(42)
+  # ValueError
+
+  to_visit = [
+    "https://realpython.com",
+    "https://python.org",
+    "https://stackoverflow.com",
+  ]
+  print(to_visit)
+
+  visited = to_visit.pop()
+  print(visited)
+  print(to_visit)
+
+  visited = to_visit.pop(0)
+  print(visited)
+  print(to_visit)
+
+  visited = to_visit.pop(-1)
+  print(visited)
+  print(to_visit)
+
+  cache = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+  print(cache)
+
+  cache.clear()
+  print(cache)
+
+  cache = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+  print(cache)
+
+  cache[:] = []
+  print(cache)
+
+  colors = [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "indigo",
+    "violet"
+  ]
+  print(colors)
+
+  del colors[1]
+  print(colors)
+
+  del colors[-1]
+  print(colors)
+
+  del colors[2:4]
+  print(colors)
+
+  del colors[:]
+  print(colors)
