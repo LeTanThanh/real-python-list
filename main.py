@@ -406,3 +406,44 @@ if __name__ == "__main__":
   That behavior make sense because you can't change immutable obejcts in place.
   Again, this behavior optimizes the memory consumption of your code when you're working with multiple copies of a list.
   """
+
+  # Updating Items in Lists: Index Assignments
+
+  """
+  list_object[index] = new_value
+  """
+
+  numbers = [1, 2, 3, 4]
+  print(numbers)
+
+  numbers[0] = "one"
+  numbers[1] = "two"
+  numbers[-1] = "four"
+  numbers[-2] = "three"
+  print(numbers)
+
+  fruits = ["apple", "banana", "orange", "kiwi", "grape"]
+  print(fruits)
+
+  index = fruits.index("kiwi")
+  fruits[index] = "mango"
+  print(fruits)
+
+  """
+  list_object[start:stop:step] = iterable
+  """
+
+  numbers = [1, 2, 3, 4, 5, 6, 7]
+  print(numbers)
+  numbers[1:4] = [22, 33, 44]
+  print(numbers)
+
+  numbers = [1, 5, 6, 7]
+  print(numbers)
+  numbers[1:1] = [2, 3, 4]
+  print(numbers)
+
+  numbers = [1, 2, 0, 0, 0, 0, 4, 5, 6, 7]
+  print(numbers)
+  numbers[2:6] = [3]
+  print(numbers)
