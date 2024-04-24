@@ -465,3 +465,17 @@ if __name__ == "__main__":
 
   pets.append(["hamster", "turtle"])
   print(pets)
+
+  # Extending a List With Multiple Items at Once: .extend()
+
+  fruits = ["apple", "pear", "peach"]
+  print(fruits)
+
+  fruits.extend(["orange", "mango", "banana"])
+  print(fruits)
+
+  fruits = ["apple", "pear", "peach"]
+  print(fruits)
+
+  fruits[len(fruits):] = ["orange", "mango", "banana"]
+  print(fruits)
