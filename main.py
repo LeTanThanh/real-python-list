@@ -561,3 +561,5 @@ if __name__ == "__main__":
 
   del colors[:]
   print(colors)
+
+  # Considering Performance While Growing Lists
