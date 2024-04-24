@@ -211,3 +211,13 @@ if __name__ == "__main__":
   print(colors[-8:])
   print(colors[8:])
   print(colors[:8])
+
+  # Creating Copies of a List
+
+  """
+  In Python, you'll have two kinds of mechanisms to create copies of an existing list.
+  You can create either
+
+  1. A shallow copy
+  2. A deep copy
+  """
